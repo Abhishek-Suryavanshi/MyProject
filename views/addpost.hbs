@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/addpost.css">
+</head>
+
+<body>
+    {{> navbar}}
+
+    <br>
+    <br>
+    <div class="addform">
+        <form action="/posts/addpost" method="POST">
+
+            <input type="text" placeholder="Enter Post Title" name="title">
+            <br>
+            <input type="text" placeholder="Enter Post Description" name="description">
+            <br>
+            <input type="text" placeholder="Enter Post ImageURL" name="imageUrl">
+            <br>
+
+            <button type="submit">Add Post</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
