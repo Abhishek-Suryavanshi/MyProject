@@ -17,9 +17,18 @@
     <div class="allposts">
         {{#each data as |d|}}
         <div>
-        <div>{{d.title}}</div>
-        <div>{{d.description}}</div>
-        <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+            <div>{{d.title}}</div>
+            <div>{{d.description}}</div>
+            <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+
+            <form action="/posts/addcomment" method="POST">
+                <input type="text" placeholder="Enter New Comment" name="comment">
+                <button type="submit">Add Comment</button>
+            </form>
+
+            <div class="commentList">
+
+            </div>
         </div>
         {{/each}}
     </div>
