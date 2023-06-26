@@ -1,4 +1,10 @@
-module.exports.getProfile = (req, res, next) => {
+const Posts = require('../models/Posts');
+
+module.exports.getProfile = async (req, res, next) => {
     // console.log("Here-2: ", req.user.username);
-    res.render('profile');
-}
+    let data = await Posts.find({});
+    res.render('profile', {
+        data,
+        name: req.user.username
+    });
+};
