@@ -16,11 +16,11 @@
     <div class="allposts">
         {{#each data as |d|}}
         <div>
-        <div>{{d.title}}</div>
-        <div>{{d.description}}</div>
-        <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+            <div>{{d.title}}</div>
+            <div>{{d.description}}</div>
+            <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
 
-        <button type="submit" class="btn">Delete</button>
+            <button type="submit" class="btn"><a href="/posts/deleteitem?_id={{d._id}}">Delete</a></button>
         </div>
         {{/each}}
     </div>
