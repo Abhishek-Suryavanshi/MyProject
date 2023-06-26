@@ -4,10 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
 </head>
 
 <body>
+
+    {{> navbar}}
+
+    <div class="allposts">
+        {{#each data as |d|}}
+        <form action="/posts/updatepost" method="POST">
+            <div>
+                <label for="inp">Title: </label>
+                <input type="text" value={{d.title}} name="title" class="inp">
+                <br>
+                <label for="description">Description: </label>
+                <input type="text" value={{d.description}} name="description" class="description">
+                <br>
+                 <label for="imageurl">ImageUrl: </label>
+                <input type="text" value={{d.imageUrl}} name="imageUrl" class="imageurl">
+
+                <input type="hidden" value={{d._id}} name="_id">
+                <br>
+            </div>
+
+            <button type="submit">Update Post</button>
+            <br>
+            <br>
+        </form>
+        {{/each}}
+    </div>
 
 </body>
 

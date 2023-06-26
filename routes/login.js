@@ -9,9 +9,7 @@ router.get('/', loginController.getLogin);
 router.post('/',
     passport.authenticate('local', { failureRedirect: '/' }),
     function (req, res) {
-        res.render('profile', {
-            name: req.user.username
-        });
+        res.redirect('/profile');
     });
 
 module.exports = router;

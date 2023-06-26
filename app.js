@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
+
 app.use('/profile', profileRouter);
 app.use('/posts', postsRouter);
 
