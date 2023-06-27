@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../styles/navbar.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
 </head>
 
 <body>
@@ -21,18 +23,21 @@
             <div>{{d.description}}</div>
             <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
 
-            <form action="/posts/addcomment" method="POST">
-                <input type="text" placeholder="Enter New Comment" name="comment">
+            <form action="/posts/addcomment" method="POST" class="form">
+                <input type="text" placeholder="Enter New Comment" name="comment" class="inp" id={{d._id}}>
                 <button type="submit">Add Comment</button>
             </form>
 
             <div class="commentList">
-
+                {{#each d.comments as |da|}}
+                    <div>{{da}}</div>
+                {{/each}}
             </div>
         </div>
         {{/each}}
     </div>
 
+    <script src="../js/script.js"></script>
 </body>
 
 </html>
