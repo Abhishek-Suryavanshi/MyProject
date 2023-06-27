@@ -13,6 +13,9 @@ router.get('/deletepost', postController.getDeletePost);
 
 router.get('/deleteitem', postController.getDeleteItem);
 
+// router.get('/getcomments', postController.getComments);
+router.post('/addcomment', postController.postAddComment);
+
 // router.get('/', postController.getPost);
 
 module.exports = router;

@@ -33,7 +33,6 @@ app.use('/signup', signupRouter);
 app.use('/profile', profileRouter);
 app.use('/posts', postsRouter);
 
-
 mongoose.connect('mongodb://127.0.0.1:27017/myapp')
     .then(() => {
         console.log("Connected to DB");

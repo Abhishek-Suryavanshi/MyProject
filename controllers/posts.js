@@ -44,7 +44,7 @@ module.exports.getUpdatePost = async (req, res, next) => {
 };
 
 module.exports.postUpdatePost = async (req, res, next) => {
-    if (res.user) {
+    if (req.user) {
         const { title, description, imageUrl, _id } = req.body;
         await Posts.updateOne({ _id }, {
             title: title,
@@ -80,3 +80,24 @@ module.exports.getDeleteItem = async (req, res, next) => {
         res.redirect('/');
     }
 };
+
+module.exports.postAddComment = async (req, res, next) => {
+    const { comment, _id } = req.body;
+    let data = await Posts.findOne({ _id });
+    // console.log(data.comments);
+    let newComments = data.comments || []; //Way-2
+    // let newComments = [];
+    // newComments.push(comment, ...data.comments); //Way-1
+    if (data.comments) {
+        newComments.push(comment, ...data.comments);
+    }
+    else {
+        newComments.push(comment);
+    }
+    // newComments.push(comment); //Way-2
+    await Posts.updateOne({ _id }, { comments: newComments });
+    res.send(newComments);
+    // console.log(_id);
+    // console.log(comment);
+    // res.send("haa bhai chalra");
+}
