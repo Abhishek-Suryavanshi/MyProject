@@ -6,10 +6,12 @@ const postController = require('../controllers/posts');
 router.get('/addpost', postController.getAddPost);
 router.post('/addpost', postController.postAddPost);
 
-router.get('/updatepost',postController.getUpdatePost);
-router.post('/updatepost',postController.postUpdatePost);
+router.get('/updatepost', postController.getUpdatePost);
+router.post('/updatepost', postController.postUpdatePost);
 
-router.get('/deletepost',postController.getDeletePost);
+router.get('/deletepost', postController.getDeletePost);
+
+router.get('/deleteitem', postController.getDeleteItem);
 
 // router.get('/', postController.getPost);
 
