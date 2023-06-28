@@ -7,8 +7,16 @@ body {
     background-color: lightgray;
 }
 
-.addform {
+h1 {
+    text-align: center;
+}
+
+.postContainer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.singlePost {
+    border: 1px solid black;
 }

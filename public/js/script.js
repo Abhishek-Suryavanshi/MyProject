@@ -23,7 +23,8 @@ form.on('submit', (ev) => {
     ev.preventDefault();
     // console.log(ev.target);
     let inpValue = inp.val();
-    let _id = $(".postId").attr('value');
+    // let _id = $('#postId').attr('value');
+    let _id = inp.attr('value');
     console.log(_id);
     // console.log(inpValue);
 
@@ -33,7 +34,7 @@ form.on('submit', (ev) => {
     // })
     //     .done((data) => {
     //         // console.log(data);
-    //         // addCommentstoList(data);
+    //         addCommentstoList(data);
     //         // console.log()
     //     })
     //     .fail((err) => {

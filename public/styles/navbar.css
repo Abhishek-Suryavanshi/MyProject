@@ -21,7 +21,10 @@
     border: 1px solid black;
     height: 45px;
     margin: auto;
-    width: 80%;
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0px;
 }
 
 .nav-links {
