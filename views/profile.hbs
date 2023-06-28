@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/profile.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 </head>
@@ -16,25 +17,33 @@
 
     <h1>Welcome {{name}} to Quora</h1>
 
-    <div class="allposts">
-        {{#each data as |d|}}
-        <div>
-            <div>{{d.title}}</div>
-            <div>{{d.description}}</div>
-            <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+    <div class="postContainer">
+        <div class="allposts">
+            {{#each data as |d|}}
+            <div class="singlePost">
+                <div>{{d.title}}</div>
+                <div>{{d.description}}</div>
+                <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+                <div>Likes</div>
 
-            <form action="/posts/addcomment" method="POST" class="form">
-                <input type="text" placeholder="Enter New Comment" name="comment" class="inp" id={{d._id}}>
-                <button type="submit">Add Comment</button>
-            </form>
+                <form action="/posts/addcomment" method="POST" class="form">
+                    <input type="text" placeholder="Enter New Comment" name="comment" class="inp" value="{{d._id}}">
+                    <input type="hidden" name="id" value="{{d._id}}" id="postId">
+                    <button type="submit">Add Comment</button>
+                </form>
 
-            <div class="commentList">
-                {{#each d.comments as |da|}}
+                <div class="commentList">
+                    {{#each d.comments as |da|}}
                     <div>{{da}}</div>
-                {{/each}}
+                    {{/each}}
+                </div>
             </div>
+
+            <br>
+            <br>
+            <br>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
 
     <script src="../js/script.js"></script>
