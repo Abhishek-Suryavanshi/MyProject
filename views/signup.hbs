@@ -4,27 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>SignUp</title>
+    <link rel="stylesheet" href="../styles/login.css">
 </head>
 
 <body>
-    <form action="/signup" method="POST">
 
-        <label for="username">Username: </label>
-        <input type="text" class="username" placeholder="Enter UserName" name="username">
+    <div class="container">
 
-        <br>
-        <br>
+        <div class="container1">
+            <img class="img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/1200px-Quora_logo_2015.svg.png"
+                alt="This is a Quora Image">
 
-        <label for="password">Password: </label>
-        <input type="text" class="password" placeholder="Enter PassWord" name="password">
+            <img class="img"
+                src="https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.static_about_page.light_mode.AboutPage_Mobile_LM.png-26-76b0211ade1124c2.png"
+                alt="This is a Quora Image">
 
-        <br>
-        <br>
+        </div>
 
-        <button type="submit">SignUp</button>
+        <div class="vl"></div>
 
-    </form>
+        <div class="container2">
+
+            <h1 class="heading1">SignUp Page</h1>
+
+            <br>
+            <form action="/signup" method="POST">
+                <label for="username" class="nameLabel">Enter Username: </label>
+                <input type="text" class="username" placeholder="Enter UserName" name="username">
+
+                <br>
+                <br>
+
+                <label for="password" class="passwordLabel">Enter Password: </label>
+                <input type="text" class="password" placeholder="Enter PassWord" name="password">
+
+                <br>
+                <br>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

@@ -7,7 +7,7 @@ const adminController = require('../controllers/admin');
 router.get('/', adminController.getAdmin);
 
 router.post('/',
-    passport.authenticate('local', { failureRedirect: '/' }),
+    passport.authenticate('local', { failureRedirect: '/error' }),
     function (req, res) {
         res.redirect('/adminportal');
     });
