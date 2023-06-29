@@ -7,7 +7,7 @@ const passport = require('passport');
 router.get('/', loginController.getLogin);
 // router.post('/', loginController.postLogin);
 router.post('/',
-    passport.authenticate('local', { failureRedirect: '/' }),
+    passport.authenticate('local', { failureRedirect: '/error' }),
     function (req, res) {
         res.redirect('/profile');
     });

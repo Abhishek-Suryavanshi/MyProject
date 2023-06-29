@@ -10,6 +10,6 @@ module.exports.getProfile = async (req, res, next) => {
         });
     }
     else {
-        res.redirect('/');
+        next();
     }
 };

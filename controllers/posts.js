@@ -5,7 +5,7 @@ module.exports.getAddPost = (req, res, next) => {
         res.render('addpost');
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 
@@ -16,7 +16,7 @@ module.exports.postAddPost = async (req, res, next) => {
         res.redirect('/profile');
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 
@@ -39,7 +39,7 @@ module.exports.getUpdatePost = async (req, res, next) => {
         // res.send("Haa chal gya");
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 
@@ -54,7 +54,7 @@ module.exports.postUpdatePost = async (req, res, next) => {
         res.redirect('/profile');
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 
@@ -66,18 +66,19 @@ module.exports.getDeletePost = async (req, res, next) => {
         });
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 
 module.exports.getDeleteItem = async (req, res, next) => {
+    console.log(req.user);
     if (req.user) {
         const { _id } = req.query;
         await Posts.findOneAndDelete({ _id });
         res.redirect('/profile');
     }
     else {
-        res.redirect('/');
+        next();
     }
 };
 

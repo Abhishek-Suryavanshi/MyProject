@@ -13,12 +13,13 @@ const signupRouter = require('./routes/signup');
 const profileRouter = require('./routes/profile');
 const postsRouter = require('./routes/posts');
 const adminRouter = require('./routes/admin');
+const errorRouter = require('./routes/error');
 
 app.use(session({
     secret: 'sssddssdcdsdssda',
     resave: false,
     saveUninitialized: true,
-}))
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,6 +37,16 @@ app.use('/signup', signupRouter);
 
 app.use('/profile', profileRouter);
 app.use('/posts', postsRouter);
+
+app.use('/error', errorRouter);
+
+app.use('/error', (req, res) => {
+    res.render('error');
+})
+
+app.get('*', (req, res) => {
+    res.render('error');
+})
 
 mongoose.connect('mongodb://127.0.0.1:27017/myapp')
     .then(() => {
