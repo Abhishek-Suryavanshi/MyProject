@@ -24,11 +24,11 @@
                 <div>{{d.title}}</div>
                 <div>{{d.description}}</div>
                 <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
-                <div>Likes</div>
+                {{!-- <div>Likes</div> --}}
 
                 <form action="/posts/addcomment" method="POST" class="form">
                     <input type="text" placeholder="Enter New Comment" name="comment" class="inp" value="{{d._id}}">
-                    <input type="hidden" name="id" value="{{d._id}}" id="postId">
+                    <input type="hidden" name="id" value="{{d._id}}" id="postId"><br>
                     <button type="submit">Add Comment</button>
                 </form>
 
