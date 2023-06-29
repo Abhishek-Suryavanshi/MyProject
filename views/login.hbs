@@ -5,28 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../styles/login.css">
 </head>
 
 <body>
 
-    {{msg}}
+    <div class="container">
+        <img class="img"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/1200px-Quora_logo_2015.svg.png"
+            alt="This is a Quora Image">
 
-    <br>
-    <form action="/login" method="POST">
-        <label for="username">Username: </label>
-        <input type="text" class="username" placeholder="Enter UserName" name="username">
+        <div class="container2">
 
-        <br>
-        <br>
+            <h1 class="heading1">Login Page</h1>
+            {{msg}}
 
-        <label for="password">Password: </label>
-        <input type="text" class="password" placeholder="Enter PassWord" name="password">
+            <br>
+            <form action="/login" method="POST">
+                <label for="username" class="nameLabel">Username: </label>
+                <input type="text" class="username" placeholder="Enter UserName" name="username">
 
-        <br>
-        <br>
+                <br>
+                <br>
 
-        <button type="submit">Login</button>
-    </form>
+                <label for="password" class="passwordLabel">Password: </label>
+                <input type="text" class="password" placeholder="Enter PassWord" name="password">
+
+                <br>
+                <br>
+
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
