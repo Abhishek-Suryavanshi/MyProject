@@ -7,10 +7,12 @@ const mongoose = require('mongoose');
 const passport = require('./auth/passport');
 const session = require('express-session');
 const methodOverride = require('method-override');
+
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
 const profileRouter = require('./routes/profile');
 const postsRouter = require('./routes/posts');
+const adminRouter = require('./routes/admin');
 
 app.use(session({
     secret: 'sssddssdcdsdssda',
@@ -26,6 +28,8 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/admin', adminRouter);
 
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
