@@ -17,14 +17,19 @@
 
     <h1>Welcome {{name}} to Quora</h1>
 
+    <br>
+    <br>
+
     <div class="postContainer">
         <div class="allposts">
             {{#each data as |d|}}
             <div class="singlePost">
-                <div>{{d.title}}</div>
-                <div>{{d.description}}</div>
-                <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+                {{!-- <img class="imgtitle" src="https://global-uploads.webflow.com/6185b708a2657014268d2eaf/62049578136dcd801bb72745_quora-featured-image-2.png" alt=""> --}}
+                <div class="title">{{d.title}}</div>
+                <div><img class="postImg" src="{{d.imageUrl}}" alt="This is data image"></div>
                 {{!-- <div>Likes</div> --}}
+                <div class="description">{{d.description}}</div>
+                <h3 class="commentHeading">Comments</h3>
 
                 <form action="/posts/addcomment" method="POST" class="form">
                     <input type="text" placeholder="Enter New Comment" name="comment" class="inp" value="{{d._id}}">
@@ -40,8 +45,7 @@
             </div>
 
             <br>
-            <br>
-            <br>
+
             {{/each}}
         </div>
     </div>

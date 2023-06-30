@@ -19,9 +19,17 @@
         <div class="allposts">
             {{#each data as |d|}}
             <div class="singlePost">
-                <div>{{d.title}}</div>
-                <div>{{d.description}}</div>
-                <div><img src="{{d.imageUrl}}" alt="This is data image"></div>
+                <div class="title">{{d.title}}</div>
+                <div><img class="postImg" src="{{d.imageUrl}}" alt="This is data image"></div>
+                <div class="description">{{d.description}}</div>
+
+                <h3 class="commentHeading">Comments</h3>
+
+                <div class="commentList">
+                    {{#each d.comments as |da|}}
+                    <div>{{da}}</div>
+                    {{/each}}
+                </div>
 
                 <button type="submit" class="btn"><a href="/posts/deleteitem?_id={{d._id}}">Delete</a></button>
             </div>
