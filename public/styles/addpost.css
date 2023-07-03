@@ -11,4 +11,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    height: 400px;
+    width: 100%;
 }
